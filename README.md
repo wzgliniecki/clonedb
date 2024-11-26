@@ -1,2 +1,2 @@
 # clonedb
-Simple database written in C.
+Simple database written in Python.
