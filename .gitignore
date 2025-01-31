@@ -50,3 +50,40 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Ignore build directories
+/build/
+/bin/
+/obj/
+/out/
+
+# Ignore Conan specific files
+.conan/
+conan.lock
+conanbuildinfo.txt
+conanbuildinfo.cmake
+
+# Ignore IDE/project files (if any)
+.vscode/
+.idea/
+*.pro
+*.user
+*.xcodeproj
+
+# Ignore system files (macOS, Linux, Windows)
+.DS_Store
+Thumbs.db
+*.swp
+
+# Ignore compiler-generated files
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+
+# Ignore dependency manager cache files
+.pip/
+*.pyc
+__pycache__/
