@@ -1,6 +1,7 @@
 #include "CommandParser.h"
 #include "MetaCommand.h"
 #include "RegularCommand.h"
+#include "Constants.h"
 
 void CommandParser::initialize_commands() {
     possibleCommands[".exit"] = std::make_unique<ExitCommand>();
@@ -26,6 +27,6 @@ void CommandParser::parse_command(const char* command) {
     if (it != possibleCommands.end()) {
         it->second->execute_command();
     } else {
-        std::cout << "Unrecognized command '" << command << "'\n";
+        std::cout << ProjectConstants::ERROR_INVALID_COMMAND << command << std::endl;
     }
 }

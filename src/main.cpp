@@ -5,11 +5,12 @@
 
 #include "InputBuffer.h"
 #include "CommandParser.h"
+#include "Constants.h"
 
 void print_prompt();
 
 void print_prompt() {
-    std::cout << "clonedb $ ";
+    std::cout << ProjectConstants::COMMAND_PROMPT;
 }
 
 int main(int argc, char *argv[]) {
