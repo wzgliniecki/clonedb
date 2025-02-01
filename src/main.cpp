@@ -3,6 +3,9 @@
 #include <cstring>
 #include <cstdlib>
 
+#include "RegularCommand.h"
+#include "MetaCommand.h"
+
 void print_prompt();
 
 class InputBuffer {
