@@ -1,40 +1,31 @@
-#ifndef REGULAR_COMMANDS_H
-#define REGULAR_COMMANDS_H
+#ifndef REGULAR_COMMAND_H
+#define REGULAR_COMMAND_H
 
 #include <iostream>
+#include "Command.h"
 
-enum class RegularCommandTypes { SELECT, UPDATE, INSERT, DELETE };
-
-class RegularCommand {
-public:
-    const char* command_string;
-
-    virtual void execute_command() = 0;
-    virtual ~RegularCommand() = default;
-};
-
-class InsertRegularCommand : public RegularCommand {
+class InsertRegularCommand : public Command {
 public:
     InsertRegularCommand();
 
     void execute_command() override;
 };
 
-class SelectRegularCommand : public RegularCommand {
+class SelectRegularCommand : public Command {
 public:
     SelectRegularCommand();
 
     void execute_command() override;
 };
 
-class UpdateRegularCommand : public RegularCommand {
+class UpdateRegularCommand : public Command {
 public:
     UpdateRegularCommand();
 
     void execute_command() override;
 };
 
-class DeleteRegularCommand : public RegularCommand {
+class DeleteRegularCommand : public Command {
 public:
     DeleteRegularCommand();
 

@@ -1,31 +1,27 @@
 #include "RegularCommand.h"
 
-InsertRegularCommand::InsertRegularCommand() {
-    command_string = ".insert";
+InsertRegularCommand::InsertRegularCommand() : Command("Insert") {
 }
 
 void InsertRegularCommand::execute_command() {
     std::cout << "Executing Insert command" << std::endl;
 }
 
-SelectRegularCommand::SelectRegularCommand() {
-    command_string = ".select";
+SelectRegularCommand::SelectRegularCommand() : Command("Select") {
 }
 
 void SelectRegularCommand::execute_command() {
     std::cout << "Executing Select command" << std::endl;
 }
 
-UpdateRegularCommand::UpdateRegularCommand() {
-    command_string = ".update";
+UpdateRegularCommand::UpdateRegularCommand() : Command("Update") {
 }
 
 void UpdateRegularCommand::execute_command() {
     std::cout << "Executing Update command" << std::endl;
 }
 
-DeleteRegularCommand::DeleteRegularCommand() {
-    command_string = ".delete";
+DeleteRegularCommand::DeleteRegularCommand() : Command("Delete") {
 }
 
 void DeleteRegularCommand::execute_command() {

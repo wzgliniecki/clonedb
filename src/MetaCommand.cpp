@@ -1,16 +1,19 @@
 #include "MetaCommand.h"
+#include "InputBuffer.h"
 
-ExitCommand::ExitCommand() {
-    command_string = ".exit";
+ExitCommand::ExitCommand() : Command(".exit") {
 }
 
 void ExitCommand::execute_command() {
     std::cout << "Executing exit command" << std::endl;
+    InputBuffer& inputBuffer = InputBuffer::getInstance();
+    inputBuffer.clearBuffer();
+    exit(EXIT_SUCCESS);
 }
 
-PrintCommand::PrintCommand() {
-    command_string = ".print";
+PrintCommand::PrintCommand() : Command(".print") {
 }
+
 
 void PrintCommand::execute_command() {
     std::cout << "Executing print command" << std::endl;

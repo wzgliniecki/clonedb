@@ -1,29 +1,17 @@
-#ifndef META_COMMANDS_H
-#define META_COMMANDS_H
+#ifndef META_COMMAND_H
+#define META_COMMAND_H
 
 #include <iostream>
+#include "Command.h"
 
-enum class MetaCommandTypes {
-    EXIT = 0,
-    PRINT = 1
-};
-
-class MetaCommand {
-public:
-    const char* command_string;
-
-    virtual ~MetaCommand() = default;
-    virtual void execute_command() = 0;
-};
-
-class ExitCommand : public MetaCommand {
+class ExitCommand : public Command {
 public:
     ExitCommand();
 
     void execute_command() override;
 };
 
-class PrintCommand : public MetaCommand {
+class PrintCommand : public Command {
 public:
     PrintCommand();
 

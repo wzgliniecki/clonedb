@@ -1,10 +1,8 @@
 #include "InputBuffer.h"
 #include <iostream>
 
-// Private constructor
 InputBuffer::InputBuffer() : buffer(nullptr), buffer_size(0) {}
 
-// Destructor
 InputBuffer::~InputBuffer() {
     if (buffer) {
         delete[] buffer;

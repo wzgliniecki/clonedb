@@ -3,9 +3,8 @@
 #include <cstring>
 #include <cstdlib>
 
-#include "RegularCommand.h"
-#include "MetaCommand.h"
 #include "InputBuffer.h"
+#include "CommandParser.h"
 
 void print_prompt();
 
@@ -17,16 +16,13 @@ int main(int argc, char *argv[]) {
     InputBuffer& inputBuffer = InputBuffer::getInstance();
     inputBuffer.allocateBuffer(100);
 
+    CommandParser& commandParser = CommandParser::getInstance();
+
     while (true) {
         print_prompt();
         inputBuffer.read_input();
 
-        if (strcmp(inputBuffer.buffer, ".exit") == 0) {
-            inputBuffer.clearBuffer();
-            exit(EXIT_SUCCESS);
-        } else {
-            std::cout << "Unrecognized command '" << inputBuffer.buffer << "'.\n";
-        }
+        commandParser.parse_command(inputBuffer.buffer);
     }
 
     return 0;
