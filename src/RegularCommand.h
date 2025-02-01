@@ -32,4 +32,12 @@ public:
     void execute_command() override;
 };
 
+class CreateTableCommand : public Command {
+public:
+    CreateTableCommand();
+
+    void execute_command() override;
+};
+
+
 #endif

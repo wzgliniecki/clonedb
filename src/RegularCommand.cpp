@@ -1,5 +1,8 @@
 #include "RegularCommand.h"
 
+#include "Table.h"
+#include "Column.h"
+
 InsertRegularCommand::InsertRegularCommand() : Command("Insert") {
 }
 
@@ -26,4 +29,11 @@ DeleteRegularCommand::DeleteRegularCommand() : Command("Delete") {
 
 void DeleteRegularCommand::execute_command() {
     std::cout << "Executing Delete command" << std::endl;
+}
+
+CreateTableCommand::CreateTableCommand() : Command("Create") {
+}
+
+void CreateTableCommand::execute_command() {
+    std::cout << "Executing Create Table command" << std::endl;
 }
