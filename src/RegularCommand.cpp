@@ -1,8 +1,5 @@
 #include "RegularCommand.h"
 
-#include "Table.h"
-#include "Column.h"
-
 InsertRegularCommand::InsertRegularCommand() : Command("Insert") {
 }
 
