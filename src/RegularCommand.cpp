@@ -33,11 +33,16 @@ void DeleteRegularCommand::execute_command() {
 }
 
 CreateTableCommand::CreateTableCommand() : Command("Create") {
-    FileHandler& fileHandler = FileHandler::getInstance();
-    Table table =  Table("Test Table");
-    fileHandler.save_table_to_file("test.txt", table);
 }
 
 void CreateTableCommand::execute_command() {
     std::cout << "Executing Create Table command" << std::endl;
+    if (!get_payload().empty()){
+        Table table =  Table(get_payload());
+        FileHandler& fileHandler = FileHandler::getInstance();
+        fileHandler.save_table_to_file("test.txt", table);
+    }
+    else{
+        std::cout<< "Invalid arguments for command Create Table"<<std::endl;
+    }
 }
