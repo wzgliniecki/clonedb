@@ -2,7 +2,7 @@ project('CloneDB', 'cpp')
 
 # Define the source files located in the src directory
 src_files = files('src/main.cpp', 'src/RegularCommand.cpp', 'src/MetaCommand.cpp', 'src/InputBuffer.cpp', 'src/CommandParser.cpp',
-    'src/Column.cpp', 'src/Table.cpp')
+    'src/Column.cpp', 'src/Table.cpp', 'src/FileHandler.cpp')
 
 # Define the include directory (where header files are located)
 include_dirs = include_directories('src')

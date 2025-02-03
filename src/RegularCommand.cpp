@@ -2,6 +2,7 @@
 
 #include "Column.h"
 #include "Table.h"
+#include "FileHandler.h"
 
 InsertRegularCommand::InsertRegularCommand() : Command("Insert") {
 }
@@ -32,7 +33,9 @@ void DeleteRegularCommand::execute_command() {
 }
 
 CreateTableCommand::CreateTableCommand() : Command("Create") {
-    Table table =  Table("Test Table")
+    FileHandler& fileHandler = FileHandler::getInstance();
+    Table table =  Table("Test Table");
+    fileHandler.save_table_to_file("test.txt", table);
 }
 
 void CreateTableCommand::execute_command() {

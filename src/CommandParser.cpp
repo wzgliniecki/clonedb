@@ -11,6 +11,7 @@ void CommandParser::initialize_commands() {
     possibleCommands["INSERT"] = std::make_unique<InsertRegularCommand>();
     possibleCommands["DELETE"] = std::make_unique<DeleteRegularCommand>();
     possibleCommands["UPDATE"] = std::make_unique<UpdateRegularCommand>();
+    possibleCommands["CREATE"] = std::make_unique<CreateTableCommand>();
 }
 
 CommandParser::CommandParser() {
