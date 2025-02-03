@@ -1,5 +1,8 @@
 #include "RegularCommand.h"
 
+#include "Column.h"
+#include "Table.h"
+
 InsertRegularCommand::InsertRegularCommand() : Command("Insert") {
 }
 
@@ -29,6 +32,7 @@ void DeleteRegularCommand::execute_command() {
 }
 
 CreateTableCommand::CreateTableCommand() : Command("Create") {
+    Table table =  Table("Test Table")
 }
 
 void CreateTableCommand::execute_command() {

@@ -20,7 +20,6 @@ public:
     bool isNullable;
 
     virtual ~Column() = default;
-    virtual void execute_command() = 0;
 
     Column(const std::string& columnName, DataType columnType, bool primaryKey = false, bool nullable = true)
         : name(columnName), data_type(columnType), isPrimaryKey(primaryKey), isNullable(nullable) {}

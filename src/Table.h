@@ -3,7 +3,6 @@
 
 #include <string>
 #include <vector>
-
 #include <Column.h>
 
 class Table {
@@ -11,11 +10,10 @@ public:
     std::string name;
     std::vector<Column> columns;
 
-    Table(const std::string& name) : name(name) {}
+    Table(const std::string& name);
 
-    void addColumn(const Column& column) {
-        columns.push_back(column);
-    }
+    void addColumn(const Column& column);
+    void dropColumn(const std::string& columnName);
 };
 
 #endif
